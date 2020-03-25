@@ -15,6 +15,7 @@ namespace EFGetStarted.Data
         {
         }
         */
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=SchoolContextCA;Trusted_Connection=True;MultipleActiveResultSets=true");
