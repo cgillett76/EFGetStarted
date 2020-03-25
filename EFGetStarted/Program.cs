@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using ConsoleTables;
 
 namespace EFGetStarted
 {
@@ -14,7 +15,21 @@ namespace EFGetStarted
     {
         static void Main(string[] args)
         {
-            StudentDetails.CourseDetailsView(2);
+            
+            string headerText = "Student List";
+
+            DisplayMethods.DisplayHeader(headerText);
+
+            StudentList.ListStudents();
+
+            Console.Write("Select ID to view details: ");
+
+            string choice = Console.ReadLine();
+            int choiceInt = 0;
+            Int32.TryParse(choice, out choiceInt);
+
+            StudentDetails.CourseDetailsView(choiceInt);
+
 
             Console.ReadLine();
         }
